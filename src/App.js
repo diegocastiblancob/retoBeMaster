@@ -5,6 +5,8 @@ import { Login } from './components/login';
 import { Register } from './components/register';
 import { AuthProvider } from './context/authContext';
 import { ProtectedRoute } from './components/protectedRoutes';
+import { ContentCategory } from './components/contentCategory';
+import { ContentDetail } from './components/contentDetails';
 
 function App() {
   return (
@@ -15,6 +17,18 @@ function App() {
             element={
               <ProtectedRoute>
                 <Home />
+              </ProtectedRoute>
+            } />
+          <Route path='/contentCategory'
+            element={
+              <ProtectedRoute>
+                <ContentCategory />
+              </ProtectedRoute>
+            } />
+          <Route path='/contentDetail'
+            element={
+              <ProtectedRoute>
+                <ContentDetail />
               </ProtectedRoute>
             } />
           <Route path='/login' element={<Login />} />

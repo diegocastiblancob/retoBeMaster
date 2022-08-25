@@ -1,11 +1,18 @@
 import React from "react";
 import { AiFillHeart } from "react-icons/ai";
 import { BsChatSquareFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ title, likes, order, image }) => {
+    const navigate = useNavigate();
+
+    const clicCard = () => {
+        navigate('/contentCategory')
+    };
+
     return (
         <div className="bg-white hover:bg-gray-800 shadow-xl hover:shadow-none cursor-pointer w-80 rounded-3xl flex flex-col items-center justify-center transition-all duration-500 ease-in-out">
-            <div className="relative mt-2 mx-2">
+            <div className="relative mt-2 mx-2" onClick={clicCard}>
                 <div className="h-56 rounded-2xl overflow-hidden">
                     <img src={image} className="object-cover w-full h-full" alt="" />
                 </div>
